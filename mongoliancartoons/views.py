@@ -14,17 +14,16 @@ import urllib2
 baseurl = "mongoliancartoons.herokuapp.com"
 
 def home(request):
-    now = timezone.now()
     random_int = randint(0, 3)
     if random_int == 0:
         text = 'Are you ready to watch some Mongolian Cartoons?'
     elif random_int == 1:
-        text = "It's never too late to watch some anime."
+        text = "It's never too late to watch some anime"
     elif random_int == 2:
-        text = "My favorite ANIME is Naruto XDDD"
+        text = "Evangelion sucks dick naruto rules"
     elif random_int == 3:
         text = "Click here for dark anime girl"
-    context_dict = {'time': now, 'base_url': baseurl, 'text' : text}
+    context_dict = {'base_url': baseurl, 'text': text}
     return render(request, 'mongoliancartoons/index.html', context_dict)
 
 
